@@ -1,7 +1,10 @@
+import { useState } from "react";
+import { Modal } from "./Modal";
+
 export const Todo = (props) => {
+    const [modalIsOpen, setModalIsOpen] =useState(false);
     const deleteHandler = () =>{
-        console.log("clicked")
-        console.log(props.text)
+        setModalIsOpen(true)
     }
 
 
@@ -11,6 +14,7 @@ export const Todo = (props) => {
             <div className="actions">
                 <button className="btn" onClick={deleteHandler}>Delete</button>
             </div>
+            {modalIsOpen && <Modal/>}
         </div>
     )
 }
