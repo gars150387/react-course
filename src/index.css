@@ -7,9 +7,16 @@
 .btn{
     background-color: red;
     position: absolute;
-    right: 200px;
+    left: 250px;
     border: solid black 1px;
 }
 .modal{
-    
+    background-color: red;
+    width:300px;
+    height: 200px;
+    border: solid black 1px;
+    z-index: -1;
+    position: absolute;
+    right: 450px;
+    top: 450px;
 }

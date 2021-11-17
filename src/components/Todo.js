@@ -1,10 +1,14 @@
 import { useState } from "react";
 import { Modal } from "./Modal";
+import { Backdrop } from "./Backdrop";
 
 export const Todo = (props) => {
     const [modalIsOpen, setModalIsOpen] =useState(false);
     const deleteHandler = () =>{
         setModalIsOpen(true)
+    }
+    const closeModalHandler =()=>{
+        setModalIsOpen(false);
     }
 
 
@@ -14,7 +18,8 @@ export const Todo = (props) => {
             <div className="actions">
                 <button className="btn" onClick={deleteHandler}>Delete</button>
             </div>
-            {modalIsOpen && <Modal/>}
+            {modalIsOpen && <Modal onCancel={closeModalHandler} onConfirm={closeModalHandler} />}
+            {modalIsOpen && <Backdrop onCancel={closeModalHandler}/>}
         </div>
     )
 }
